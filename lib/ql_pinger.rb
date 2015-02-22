@@ -13,7 +13,7 @@ class QLPinger
 
   def ping
     set_time
-    value = %x( ping -c 2 #{@ip} )
+    value = %x( ping -c 5 #{@ip} )
     ping = value.match(/((\d+.\d+\/){3}\d+.\d+)/).to_a
     ping = ping[1].split('/')
     @ping = ping[2]
