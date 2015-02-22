@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7e66ca71-ecc5-4426-bfa9-88424e8b5e62" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    <list default="true" id="7e66ca71-ecc5-4426-bfa9-88424e8b5e62" name="Default" comment="Deleted .idea directory from git">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/ql.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
     <ignored path="ql.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -367,7 +374,13 @@
       <option name="project" value="LOCAL" />
       <updated>1424609035199</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Deleted .idea directory from git">
+      <created>1424609128961</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1424609128961</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -413,7 +426,8 @@
     </option>
     <MESSAGE value="Added migrations + database configuration" />
     <MESSAGE value="Modified gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified gitignore" />
+    <MESSAGE value="Deleted .idea directory from git" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted .idea directory from git" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
