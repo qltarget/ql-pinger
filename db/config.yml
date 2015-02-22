@@ -1,0 +1,10 @@
+standalone:
+  adapter: mysql
+  driver: Mysql
+  encoding: utf8
+  reconnect: false
+  database: quake_live
+  pool: 5
+  username: ql
+  password: ql
+  socket: /tmp/mysql.sock
