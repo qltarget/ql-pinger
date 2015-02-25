@@ -7,4 +7,5 @@ standalone:
   pool: 5
   username: ql
   password: ql
-  socket: /tmp/mysql.sock
+  socket: /usr/local/var/mysql/mysqld.sock
+  dsn: DBI:Mysql:database=quake_live;socket=/usr/local/var/mysql/mysqld.sock;

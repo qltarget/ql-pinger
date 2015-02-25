@@ -4,26 +4,30 @@ require 'dbd'
 require 'yaml'
 
 class QLPinger
-  def initialize(name, ip, interval)
-    @name = name
-    @ip = ip
+  def initialize(ips, interval)
+    @ips = ips
     @interval = interval
+    @ping = {}
     config
   end
 
   def ping
     set_time
-    value = %x( ping -c 5 #{@ip} )
-    ping = value.match(/((\d+.\d+\/){3}\d+.\d+)/).to_a
-    ping = ping[1].split('/')
-    @ping = ping[2]
+    @ips.each_pair do |name, ip|
+      value = %x( ping -c 5 #{ip} )
+      ping = value.match(/((\d+.\d+\/){3}\d+.\d+)/).to_a
+      ping = ping[1].split('/')
+      @ping[name] = ping[2]
+    end
   end
 
   def save_to_db
     sql = 'INSERT INTO ping (name, value, date) VALUES (?, ?, ?)'
 
     @dbi.prepare(sql) do |st|
-      st.execute(@name, @ping, @time)
+      @ping.each_pair do |name, ping|
+        st.execute(name, ping, @time)
+      end
     end
   end
 
@@ -39,9 +43,9 @@ class QLPinger
   end
 
   def config
-    config = YAML.load_file('db/config.yml')
+    config = YAML.load_file("#{Dir.pwd}/db/config.yml")
     config = config['standalone']
-    @dbi = DBI.connect("DBI:#{config['driver']}:#{config['database']}", "#{config['username']}", "#{config['password']}")
+    @dbi = DBI.connect("#{config['dsn']}", "#{config['username']}", "#{config['password']}")
   end
 
 end

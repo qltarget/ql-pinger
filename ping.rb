@@ -2,12 +2,18 @@ require_relative 'lib/signal_handler'
 require_relative 'lib/ql_pinger'
 
 sigint = SignalHandler.new('INT')
-pinger = QLPinger.new('de', '91.198.152.137', 600)
+pinger = QLPinger.new(
+    {
+        :ql_de => '91.198.152.137',
+        :schnellno_de => '80.255.2.7'
+    },
+    900
+)
 
 loop do
   pinger.ping
 
-  sigint.dont_interrupt{ pinger.save_to_db }
+  sigint.dont_interrupt { pinger.save_to_db }
 
   pinger.sleep
 end
