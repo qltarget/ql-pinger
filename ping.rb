@@ -5,7 +5,8 @@ sigint = SignalHandler.new('INT')
 pinger = QLPinger.new(
     {
         :ql_de => '91.198.152.137',
-        :schnellno_de => '80.255.2.7'
+        :schnellno_de => '80.255.2.7',
+        :indivisus_pl => '5.39.83.138'
     },
     900
 )
