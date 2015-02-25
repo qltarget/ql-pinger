@@ -7,7 +7,7 @@ pinger = QLPinger.new(
         :ql_de => '91.198.152.137',
         :schnellno_de => '80.255.2.7',
         :indivisus_pl => '5.39.83.138',
-        :aws_de => '54.93.72.243:943'
+        :aws_de => '54.93.72.243'
     },
     900
 )
