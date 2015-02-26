@@ -14,10 +14,14 @@ class QLPinger
   def ping
     set_time
     @ips.each_pair do |name, ip|
-      value = %x( ping -c 5 #{ip} )
-      ping = value.match(/((\d+.\d+\/){3}\d+.\d+)/).to_a
-      ping = ping[1].split('/')
-      @ping[name] = ping[2]
+      begin
+        value = %x( ping -c 5 #{ip} )
+        ping = value.match(/((\d+.\d+\/){3}\d+.\d+)/).to_a
+        ping = ping[1].split('/')
+        @ping[name] = ping[2]
+      rescue
+        next
+      end
     end
   end
 
